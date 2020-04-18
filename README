@@ -1,0 +1,101 @@
+-----------------------------------------------------
+      _       _     ___                            
+ __ _| |_ _ _(_)___/ __| __ __ _ _ _  _ _  ___ _ _ 
+/ _` |  _| '_| / -_)__ \/ _/ _` | ' \| ' \/ -_) '_|
+\__, |\__|_| |_\___|___/\__\__,_|_||_|_||_\___|_|  
+|___/                                          
+              _ _   _       _
+  /\/\  _   _| | |_(_)_ __ | | _____  __     _____
+ /    \| | | | | __| | '_ \| |/ _ \ \/ /    /____/
+/ /\/\ \ |_| | | |_| | |_) | |  __/>  <      _____
+\/    \/\__,_|_|\__|_| .__/|_|\___/_/\_\    /____/
+                     |_|
+
+Pedro Ribeiro - CRACS & INESC-TEC, DCC/FCUP
+pribeiro@dcc.fc.up.pt
+
+Andre Meira - DCC/FCUP
+up201404877@fc.up.pt or
+andrecoutomeira@gmail.com
+
+-----------------------------------------------------
+.VERY SHORT MANUAL
+
+-Examples of usage
+
+ > scanner -g datasets/abcd/graph.txt --esu -s 3 -d
+ > scanner -g datasets/abc/graph.txt --fase -s 4 -i 2 
+ 
+  (You should call the program like this
+  scanner -g <graph_file> [other_option])
+
+.POSSIBLE OPTIONS
+
+ - [-g <file>] or [--graph <file>]
+   File containing the graph (mandatory)
+
+ - [-f <folder>] or [--folder <folder>]
+   Folder to put the generated HTML pages
+   Do not use the symbol '/'. Only the name
+   *make sure that the folder exists* 
+   (they will be in HTML/ by defautlt) 
+ 
+ - [-d] or [--directed] or [--dir]
+   Graph is directed (default is undirected)
+   No other type (weighted, etc) is supported
+ 
+ - [--esu]
+   Use method ESU to count
+
+ - [--fase]
+   Use method FaSE to count
+   (method used by default)
+
+ - [-s <int>] or [--size <int>]
+   Subgraph size to count 
+   (default is 2)
+
+ - [-i <int>] or [--isomorphism <int>]
+   The integer must be 1 or 2 (default is 1)
+   > 1: Permutations of node labels are allowed, 
+but permutations of layer labels are not allowed  
+   > 2: Both node and layer labels are allowed 
+to be permuted
+
+ - [-l [int,int,...int]] or [--def_layers [int,int,...int]]
+   Set of def_layers to be considered in the census
+   All def_layers used by default
+   Use exactly like this, no spaces and with brackets 
+
+ - [-r <int>] or [--results <int>]
+   Show <int> subgraphs instead the maximum, 
+   which is 500 (or less)
+
+ - [--one] or [--all]
+   Show all the results on *one* HTML page
+   (default is false)
+
+ - [-p <int>] or [--page <int>]
+   Show <int> subgraphs in each page 
+   (default is 50, so 10 pages maximum)
+   (if you decrease the value more pages you have)
+   Ineffective when using the argument '--one'
+   
+ - [--edges]
+   Show the subgraphs order by the number of edges
+   (default is false)
+
+ - [-c] or [--crescent]
+   Show the subgraphs in crescent order
+   Also works with '--edges'
+   (default is false)
+
+ - [-e] or [--expand]
+   Show the subgraphs in expanded format
+   Always true when the graph is directed
+   (default is false)
+
+.HTML PAGES
+ Do not worry about the representation size
+ Once they are vector graphics you can zoom 
+ in or out without lose quality
